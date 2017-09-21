@@ -74,6 +74,7 @@
             >
 
             <TextView
+                android:id="@+id/btn_forget_password"
                 android:layout_width="0dp"
                 android:layout_weight="0.49"
                 android:layout_height="wrap_content"
@@ -92,6 +93,7 @@
                 />
 
             <TextView
+                android:id="@+id/btn_register_account"
                 android:layout_width="0dp"
                 android:layout_weight="0.49"
                 android:layout_height="wrap_content"
