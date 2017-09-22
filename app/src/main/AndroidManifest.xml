@@ -22,11 +22,16 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".activity.MainActivity"/>
-        <activity android:name=".activity.ActivityRegister"></activity>
+
         <activity android:name=".activity.LoginActivity"
             android:theme="@style/AppTheme.FullScreenNoStatus"
             />
+        <activity android:name=".activity.ActivityRegister"
+            android:theme="@style/AppTheme.FullScreenNoStatus"
+            />
+
+        <activity android:name=".activity.MainActivity"/>
+        <activity android:name=".activity.ProductActivity"/>
 
     </application>
 
