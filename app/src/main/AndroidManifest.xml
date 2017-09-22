@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.SplashActivity"
+        <activity android:name=".activity.SplashActivity">
+        </activity>
+
+        <activity android:name=".activity.FullscreenActivity"
             android:theme="@style/AppTheme.FullScreenNoStatus"
             >
             <intent-filter>
@@ -17,8 +20,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
 
+        </activity>
         <activity android:name=".activity.MainActivity"/>
         <activity android:name=".activity.ActivityRegister"></activity>
         <activity android:name=".activity.LoginActivity"
