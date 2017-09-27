@@ -1,5 +1,6 @@
 package com.example.sonu.burgerbuggy.activity;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
@@ -9,14 +10,18 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sonu.burgerbuggy.R;
+import com.example.sonu.burgerbuggy.animation.StandUpAnimator;
+import com.example.sonu.burgerbuggy.animation.YoYo;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -27,7 +32,7 @@ import java.util.TimerTask;
  */
 public class FullscreenActivity extends AppCompatActivity {
 
-    TextView alreadyLogin, btn_logIn;
+    TextView alreadyLogin, btn_logIn,textTitle;
 
 
     @Override
@@ -37,7 +42,32 @@ public class FullscreenActivity extends AppCompatActivity {
 
         btn_logIn = (TextView)findViewById(R.id.btn_login);
         alreadyLogin = (TextView)findViewById(R.id.already_login);
+        textTitle = (TextView)findViewById(R.id.text_title);
 
+        YoYo.with(new StandUpAnimator())
+                .duration(2300)
+                .pivot(YoYo.CENTER_PIVOT, YoYo.CENTER_PIVOT)
+                .interpolate(new AccelerateDecelerateInterpolator())
+                .withListener(new Animator.AnimatorListener() {
+                    @Override
+                    public void onAnimationStart(Animator animation) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animator animation) {
+                    }
+
+                    @Override
+                    public void onAnimationCancel(Animator animation) {
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animator animation) {
+
+                    }
+                })
+                .playOn(textTitle);
 
         final int screenHeight = getScreenDimensions(this).y;
         final int waveImgheight = getResources().getDrawable(R.drawable.pizza).getIntrinsicHeight();

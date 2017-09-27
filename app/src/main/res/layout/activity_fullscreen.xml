@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#da75ad"
+    android:background="#000000"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
@@ -49,6 +49,17 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_margin="@dimen/_20sdp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:fontFamily="serif"
+        android:textSize="@dimen/_30sdp"
+        android:text="Burger Buggy"
+        android:textColor="#ffffff" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -81,11 +92,13 @@
 -->
 
 
+
+
         <TextView
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_margin="20dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_margin="@dimen/_20sdp"
             android:background="#a0201a"
             android:gravity="center"
             android:text="Log In"
@@ -94,11 +107,13 @@
         <TextView
             android:id="@+id/already_login"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_margin="20dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
             android:background="@drawable/fill_border_two"
             android:gravity="center"
-            android:text="Wellcome To Burger Buggy"
+            android:text="Register"
             android:textColor="#ffffff" />
 
 
