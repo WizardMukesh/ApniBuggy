@@ -1,5 +1,6 @@
 package com.example.sonu.burgerbuggy.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 import com.example.sonu.burgerbuggy.R;
@@ -44,7 +46,7 @@ public class CategoryAdapter extends ArrayAdapter<Category> {
     @Override
     public int getCount() {
         // TODO Auto-generated method stub
-        return 10;
+        return categoryArrayList.size();
     }
 
 
@@ -52,6 +54,7 @@ public class CategoryAdapter extends ArrayAdapter<Category> {
     class ViewHolder
     {
         ImageView imageCategory;
+        TextView categoryName;
     }
 
     @Override
@@ -62,11 +65,17 @@ public class CategoryAdapter extends ArrayAdapter<Category> {
         {
             viewHolder = new ViewHolder();
             view = vi.inflate(resourceId, parent, false);
+            viewHolder.categoryName = (TextView)view.findViewById(R.id.text_category_name);
+
             view.setTag(viewHolder);
+
         } else {
             viewHolder = (ViewHolder) view.getTag();
         }
 
+//        final Category item = categoryArrayList.get(position);
+
+        viewHolder.categoryName.setText(categoryArrayList.get(position).getCategoryName());
 
         return view;
     }

@@ -31,6 +31,9 @@
         <activity android:name=".activity.MainActivity"
             android:theme="@style/AppTheme.Transcluent"
             />
+        <activity android:name=".activity.ActivityRegistration2"
+            android:theme="@style/AppTheme.Transcluent"
+            />
         <activity android:name=".activity.ProductActivity"/>
 
     </application>

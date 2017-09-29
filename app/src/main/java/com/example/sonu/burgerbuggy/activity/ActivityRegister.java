@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ import com.example.sonu.burgerbuggy.R;
 
 public class ActivityRegister extends AppCompatActivity {
     private TextView btnAlreadyAc;
+    private Button btnNext;
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,8 +31,18 @@ public class ActivityRegister extends AppCompatActivity {
 
             }
         });
+
+        btnNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =new Intent(ActivityRegister.this,ActivityRegistration2.class);
+                startActivity(intent);
+
+            }
+        });
     }
     public void findViewsByID(){
         btnAlreadyAc = (TextView)findViewById(R.id.btn_already_have_ac);
+        btnNext = (Button) findViewById(R.id.btn_next);
     }
 }

@@ -9,13 +9,13 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:background="#a4000000">
 
 
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#a4000000"
             android:padding="@dimen/_30sdp"
             >
             <EditText
@@ -59,7 +59,7 @@
                 android:inputType="textEmailAddress"
                 android:layout_marginTop="@dimen/_15sdp"
                 />
-<EditText
+ <EditText
                 android:id="@+id/edit_mobile_no"
                 android:layout_below="@+id/edit_enter_email"
                 android:layout_width="match_parent"
@@ -71,6 +71,7 @@
                 android:textColorHint="@color/gray"
                 android:singleLine="true"
                 android:inputType="phone"
+     android:visibility="gone"
                 android:layout_marginTop="@dimen/_15sdp"
                 />
 <EditText
@@ -103,13 +104,13 @@
                 />
 
         <Button
-            android:id="@+id/btn_signup"
+            android:id="@+id/btn_next"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edit_cnfrm_password"
             android:layout_marginTop="@dimen/_15sdp"
             android:background="@drawable/btn_login_shape"
-            android:text="SignUp"
+            android:text="Next"
             android:textColor="@color/white"
             />
 
@@ -119,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:text="Already have an account? Login here"
                 android:layout_gravity="center"
-                android:layout_below="@+id/btn_signup"
+                android:layout_below="@+id/btn_next"
                 android:layout_marginTop="@dimen/_15sdp"
                 android:textColor="@color/white"
                 android:layout_centerHorizontal="true"

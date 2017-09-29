@@ -34,7 +34,6 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         this.resourceId=resourceId;
         vi = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        Log.e("SIZE", productArrayList.size()+"");
     }
 
     @Override
@@ -48,6 +47,7 @@ public class ProductAdapter extends ArrayAdapter<Product> {
     class ViewHolder
     {
         ImageView imageCategory;
+
     }
 
     @Override

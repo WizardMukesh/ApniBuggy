@@ -3,6 +3,7 @@ package com.example.sonu.burgerbuggy.activity;
 import android.animation.Animator;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,6 +24,7 @@ import com.example.sonu.burgerbuggy.R;
 import com.example.sonu.burgerbuggy.animation.StandUpAnimator;
 import com.example.sonu.burgerbuggy.animation.YoYo;
 
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -40,9 +42,30 @@ public class FullscreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen);
 
-        btn_logIn = (TextView)findViewById(R.id.btn_login);
-        alreadyLogin = (TextView)findViewById(R.id.already_login);
         textTitle = (TextView)findViewById(R.id.text_title);
+
+
+        Thread timerThread = new Thread() {
+            public void run() {
+                try {
+                    sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+
+
+                        Intent in = new Intent(FullscreenActivity.this, ActivityRegister.class);
+                        startActivity(in);
+                        finish();
+
+                    }
+
+            }
+        };
+        timerThread.start();
+
+
+
 
         YoYo.with(new StandUpAnimator())
                 .duration(2300)
@@ -119,23 +142,6 @@ public class FullscreenActivity extends AppCompatActivity {
         waveAnimation.setRepeatMode(Animation.RESTART);
         waveAnimation2.setDuration(30000);
         animatedView2.startAnimation(waveAnimation2);
-
-        btn_logIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(FullscreenActivity.this,LoginActivity.class);
-                startActivity(i);
-
-            }
-        });
-
-        alreadyLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-            }
-        });
 
     }
 

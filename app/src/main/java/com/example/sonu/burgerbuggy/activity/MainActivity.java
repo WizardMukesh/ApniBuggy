@@ -1,5 +1,8 @@
 package com.example.sonu.burgerbuggy.activity;
 
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
@@ -19,6 +22,7 @@ import com.example.sonu.burgerbuggy.R;
 import com.example.sonu.burgerbuggy.adapter.CategoryAdapter;
 import com.example.sonu.burgerbuggy.adapter.MyAdapter;
 import com.example.sonu.burgerbuggy.adapter.ProductAdapter;
+import com.example.sonu.burgerbuggy.fragments.FragmentHome;
 import com.example.sonu.burgerbuggy.model.Category;
 import com.example.sonu.burgerbuggy.model.Product;
 
@@ -101,7 +105,34 @@ public class MainActivity extends ActionBarActivity {
         Drawer.setDrawerListener(mDrawerToggle); // Drawer Listener set to the Drawer toggle
         mDrawerToggle.syncState();               // Finally we set the drawer toggle sync State
 
+        Fragment fragment = new FragmentHome();
+
+        replaceFragment(fragment,getFragmentManager(),MainActivity.this,R.id.content_main);
+
     }
+    public static void replaceFragment(Fragment fragment, android.app.FragmentManager manager, Activity activity, int id) {
+/*
+        if(!MyApplication.isConnectingToInternet()) {
+            Snackbar.make(activity.findViewById(android.R.id.content),"No Internet Connection Found!",Snackbar.LENGTH_LONG).show();
+            return;
+        }
+*/
+
+        String backStateName = fragment.getClass().getName();
+        String fragmentTag = backStateName;
+
+        boolean fragmentPopped = manager.popBackStackImmediate(backStateName, 0);
+
+        if (!fragmentPopped && manager.findFragmentByTag(fragmentTag) == null) {
+            //fragment not in back stack, create it.
+            FragmentTransaction ft = manager.beginTransaction();
+            ft.replace(id, fragment, fragmentTag);
+            ft.addToBackStack(backStateName);
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+            ft.commit();
+        }
+    }
+
 
 
 }

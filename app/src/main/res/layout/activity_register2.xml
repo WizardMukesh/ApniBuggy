@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/burger">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#a4000000"
+        android:padding="@dimen/_30sdp"
+        >
+        <EditText
+            android:id="@+id/edit_delevery_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Delevery Address"
+            android:textColor="@color/white"
+            android:padding="@dimen/_15sdp"
+            android:background="@drawable/login_fields_shape"
+            android:textColorHint="@color/gray"
+            android:singleLine="true"
+            android:inputType="phone"
+            android:layout_marginTop="@dimen/_15sdp"
+            />
+        <EditText
+            android:id="@+id/edit_billing_add"
+            android:layout_below="@+id/edit_delevery_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Billing Address"
+            android:textColor="@color/white"
+            android:padding="@dimen/_15sdp"
+            android:background="@drawable/login_fields_shape"
+            android:textColorHint="@color/gray"
+            android:singleLine="true"
+            android:inputType="phone"
+            android:layout_marginTop="@dimen/_15sdp"
+            />
+        <EditText
+            android:id="@+id/edit_mobile_no"
+            android:layout_below="@+id/edit_billing_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mobile No"
+            android:textColor="@color/white"
+            android:padding="@dimen/_15sdp"
+            android:background="@drawable/login_fields_shape"
+            android:textColorHint="@color/gray"
+            android:singleLine="true"
+            android:inputType="phone"
+            android:layout_marginTop="@dimen/_15sdp"
+            />
+
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_mobile_no"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@drawable/btn_login_shape"
+            android:text="SignUp"
+            android:textColor="@color/white"
+            />
+        <TextView
+            android:id="@+id/btn_already_have_ac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already have an account? Login here"
+            android:layout_gravity="center"
+            android:layout_below="@+id/btn_signup"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"
+            android:textAppearance="?android:textAppearanceMedium"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>
